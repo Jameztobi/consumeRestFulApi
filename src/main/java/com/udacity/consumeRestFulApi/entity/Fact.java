@@ -1,7 +1,9 @@
 package com.udacity.consumeRestFulApi.entity;
 
+import java.util.List;
+
 public class Fact {
-    private String fact;
+    private  String fact;
 
     public Fact() {
     }
@@ -16,5 +18,12 @@ public class Fact {
 
     public void setFact(String fact) {
         this.fact = fact;
+    }
+
+    @Override
+    public String toString() {
+        return "Fact{" +
+                "fact='" + fact + '\'' +
+                '}';
     }
 }

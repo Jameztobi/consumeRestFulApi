@@ -1,8 +1,8 @@
 package com.udacity.consumeRestFulApi;
 
-import com.udacity.consumeRestFulApi.entity.DogFact;
-import com.udacity.consumeRestFulApi.entity.Joke;
 
+
+import com.udacity.consumeRestFulApi.entity.Fact;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -38,8 +38,8 @@ public class ConsumeRestFulApiApplication {
 	@Bean
 	public CommandLineRunner run(RestTemplate restTemplate) throws Exception{
 		return args -> {
-			DogFact[] dogFact = restTemplate.getForObject("https://dog-facts-api.herokuapp.com/api/v1/resources/dogs/all", DogFact[].class);
-			log.info(dogFact.toString());
+			Fact[] dogFact = restTemplate.getForObject("https://dog-facts-api.herokuapp.com/api/v1/resources/dogs/all", Fact[].class);
+			log.info(dogFact[0].getFact());
 		};
 
 	}
